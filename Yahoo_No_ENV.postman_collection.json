@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "af151200-daec-435b-aa92-b8609a6b97f3",
+		"name": "Yahoo_No_ENV",
+		"description": "This is a collection containing request about yahoo services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CurrencyConversion",
+			"item": [
+				{
+					"name": "yahoo_currency_conversion_request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://query.yahooapis.com/v1/public/yql?q=SELECT * FROM yahoo.finance.xchange WHERE pair=\"USDINR\"&diagnostics=true&env=store://datatables.org/alltableswithkeys&format=json",
+							"protocol": "https",
+							"host": [
+								"query",
+								"yahooapis",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"yql"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "SELECT * FROM yahoo.finance.xchange WHERE pair=\"USDINR\""
+								},
+								{
+									"key": "diagnostics",
+									"value": "true"
+								},
+								{
+									"key": "env",
+									"value": "store://datatables.org/alltableswithkeys"
+								},
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						},
+						"description": "Description Retrieves currency exchange rate data for given pair(s). Accepts both where pair='eurusd, gbpusd' and where pair in ('eurusd', 'gpbusd, usdaud') Sample Query select * from yahoo.finance.xchange where pair in (\"EURUSD\",\"GBPUSD\")"
+					},
+					"response": []
+				},
+				{
+					"name": "Get RSS Feeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://query.yahooapis.com/v1/public/yql?q=select title from rss where url=\"http://rss.news.yahoo.com/rss/topstories\"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=",
+							"protocol": "https",
+							"host": [
+								"query",
+								"yahooapis",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"yql"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "select title from rss where url=\"http://rss.news.yahoo.com/rss/topstories\""
+								},
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "diagnostics",
+									"value": "true"
+								},
+								{
+									"key": "env",
+									"value": "store://datatables.org/alltableswithkeys"
+								},
+								{
+									"key": "callback",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

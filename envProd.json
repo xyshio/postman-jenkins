@@ -1,0 +1,15 @@
+{
+	"id": "caa58b0f-bfa0-4182-989e-7a4f330f90a9",
+	"name": "YahooProdServer",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://query.yahooapis.com/v1/public/yql",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2018-10-17T13:47:04.749Z",
+	"_postman_exported_using": "Postman/6.4.2"
+}
