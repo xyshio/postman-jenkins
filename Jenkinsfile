@@ -16,7 +16,7 @@ pipeline{
                 
                 // sh 'mvn clean package'
                 //sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
-                sh 'newman run postman.json'
+                sh 'newman run pmn.json --folder "Auth: Digest"'
                 //sh 'docker image ls -a'
             }
         }
